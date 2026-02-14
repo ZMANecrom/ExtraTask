@@ -11,6 +11,14 @@ class task1
         {
             inputText += line + " ";
         }
-        Console.Write(inputText);
+
+        string[] sentences = inputText.Split(new char[] { '.', '!', '?'}, StringSplitOptions.RemoveEmptyEntries);
+        for (int i = 0; i < sentences.Length; i++)
+        {
+            string s = sentences[i];
+            sentences[i] = s.Trim();
+            Console.WriteLine(sentences[i]);
+        }
+        Console.WriteLine(inputText);
     }
 }
